@@ -2,6 +2,11 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import os
+import streamlit as st
+
+# اطبع كل الملفات الموجودة في نفس المجلد
+st.write("📂 Files in current directory:", os.listdir("."))
 
 # =============================
 
@@ -44,4 +49,5 @@ if uploaded_file is not None:
    
     st.image(image_input, caption="Uploaded MRI Image", use_container_width=True)
     st.success(f" Prediction: {predicted_label}")
+
     st.info(f" Confidence: {confidence:.2f}%")
