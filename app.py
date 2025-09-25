@@ -13,7 +13,7 @@ st.write("📂 Files in current directory:", os.listdir("."))
 # =============================
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("Mai94.keras")
+    return tf.keras.models.load_model("Mai94.keras", compile=False)
 
 model = load_model()
 class_labels = ['glioma', 'meningioma', 'no_tumor', 'pituitary']
@@ -51,3 +51,4 @@ if uploaded_file is not None:
     st.success(f" Prediction: {predicted_label}")
 
     st.info(f" Confidence: {confidence:.2f}%")
+
